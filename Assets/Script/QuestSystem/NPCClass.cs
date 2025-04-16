@@ -22,7 +22,7 @@ public abstract class NPCClass : MonoBehaviour
     
     public enum NPCState
     {
-        Idle,
+        Happy,
         Sad,
         OnReward
     }
@@ -33,14 +33,14 @@ public abstract class NPCClass : MonoBehaviour
 
         need2 = !hasSecondNeed;
 
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public virtual void Update()
     {
         switch(currentState)
         {
-            case NPCState.Idle:
+            case NPCState.Happy:
                 HandleIdle();
                 break;
             case NPCState.Sad:
@@ -54,7 +54,7 @@ public abstract class NPCClass : MonoBehaviour
 
     public virtual void HandleIdle()
     {
-        animator.SetTrigger("Idle");
+        animator.SetTrigger("Happy");
     }
 
     public virtual void HandleSad()
@@ -69,12 +69,12 @@ public abstract class NPCClass : MonoBehaviour
 
     public virtual void NeedSatisfied()
     {
-        if(need1 == false)
+        if(!need1)
         {
             need1 = true;
         }
 
-        if (need2 == false)
+        if (!need2)
         {
             need2 = true;
         }
@@ -87,6 +87,11 @@ public abstract class NPCClass : MonoBehaviour
             OnReward();
             currentState = NPCState.OnReward;
         }
+    }
+
+    public void TriggerIdle()
+    {
+        currentState = NPCState.Happy;
     }
 
     public abstract void OnReward();
