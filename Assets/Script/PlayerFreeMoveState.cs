@@ -23,6 +23,6 @@ public class PlayerFreeMoveState : PlayerState
 
     public void UpdateState(PlayerStateMachineController stateMachine, PlayerScpt player)
     {
-
+        player.Attack();
     }
 }
