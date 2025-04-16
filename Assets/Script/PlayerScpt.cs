@@ -9,8 +9,8 @@ public class PlayerScpt : MonoBehaviour
     public LayerMask _groundLayerMask;
 
     #region JumpValues
-    [SerializeField] float _jumpForce;
     [SerializeField] float _gravityModifierValue, _maxGravityValue;
+    [SerializeField] float _jumpForce;
     [SerializeField] float _baseCoyoteTime, _baseJumpBuffer;
     float _coyoteTime, _jumpBuffer;
     bool _extraGravity;
@@ -38,7 +38,7 @@ public class PlayerScpt : MonoBehaviour
     {
         Vector2 moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        Vector2 desiredVelocity = moveDirection * _maxSpeed;
+        Vector2 desiredVelocity = moveDirection.normalized * _maxSpeed;
         
         Vector3 currentVelocity = _playerRB.velocity;
 
@@ -63,7 +63,7 @@ public class PlayerScpt : MonoBehaviour
 
     public void IsOnGround()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, 1.2f, _groundLayerMask))
+        if (Physics.Raycast(transform.position, Vector3.down, 1.1f, _groundLayerMask))
         {
             _coyoteTime = _baseCoyoteTime;
         }
@@ -93,11 +93,11 @@ public class PlayerScpt : MonoBehaviour
 
         Vector3 velocity = _playerRB.velocity;
 
-        velocity.y += _gravityModifierValue * Time.deltaTime;
+        velocity.y += -_gravityModifierValue * Time.deltaTime;
 
-        if(velocity.y < _maxGravityValue)
+        if(velocity.y < -_maxGravityValue)
         {
-            velocity.y = _maxGravityValue;
+            velocity.y = -_maxGravityValue;
         }
 
         _playerRB.velocity = velocity;

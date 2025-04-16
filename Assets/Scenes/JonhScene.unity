@@ -479,11 +479,9 @@ MonoBehaviour:
   _groundLayerMask:
     serializedVersion: 2
     m_Bits: 1024
+  _gravityModifierValue: 0
+  _maxGravityValue: 5
   _jumpForce: 5
-  _minJumpHight: 4.9
-  _maxJumpHight: 50
-  _jumpDesacelerate: 0.1
-  _extraGravityValue: 2
   _baseCoyoteTime: 0.2
   _baseJumpBuffer: 0.1
   _aceleration: 5
