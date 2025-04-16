@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    PlayerState currentState;
+
+    PlayerState freeState = new PlayerFreeMoveState();
+
+    PlayerScpt player;
+
+    private void Awake()
+    {
+        player = GetComponent<PlayerScpt>();
+    }
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeState(PlayerState newState)
     {
-        
+        if (currentState != null)
+            currentState.ExitState(this, player);
+
+        currentState = newState;
+
+        currentState.EnterState(this, player);
+    }
+
+    private void Update()
+    {
+        currentState.UpdateState(this, player);
+    }
+
+    void FixedUpdate()
+    {
+        currentState.FixedState(this, player);
     }
 }
