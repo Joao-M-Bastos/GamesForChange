@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFreeMoveState : MonoBehaviour
+public class PlayerFreeMoveState : PlayerState
 {
-    // Start is called before the first frame update
-    void Start()
+    public void EnterState(PlayerStateMachine stateMachine, PlayerScpt player)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ExitState(PlayerStateMachine stateMachine, PlayerScpt player)
     {
-        
+        throw new System.NotImplementedException();
+    }
+
+    public void FixedState(PlayerStateMachine stateMachine, PlayerScpt player)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void UpdateState(PlayerStateMachine stateMachine, PlayerScpt player)
+    {
+        throw new System.NotImplementedException();
     }
 }
