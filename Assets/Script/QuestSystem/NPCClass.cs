@@ -5,38 +5,93 @@ using UnityEngine;
 
 public abstract class NPCClass : MonoBehaviour
 {
-    public bool needs1;
-    [Header("If they have a second need, please toggle 'hasSecondNeed'")]
+    public bool need1;
     public bool hasSecondNeed;
-    public bool needs2;
+    public bool need2;
 
-    public void Start()
+    [Header("Just a short description. Doesn't affect anything.")]
+    public string needOne;
+    public string needTwo;
+    public string reward;
+
+    [Header("Animator")]
+    public Animator animator;
+
+    [Header("State Stuff")]
+    public NPCState currentState;
+    
+    public enum NPCState
     {
-        if(hasSecondNeed == false)
+        Happy,
+        Sad,
+        OnReward
+    }
+
+    public virtual void Start()
+    {
+        currentState = NPCState.Sad;
+
+        need2 = !hasSecondNeed;
+
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    public virtual void Update()
+    {
+        switch(currentState)
         {
-            needs2 = true;
+            case NPCState.Happy:
+                HandleIdle();
+                break;
+            case NPCState.Sad:
+                HandleSad();
+                break;
+            case NPCState.OnReward:
+                HandleOnReward();
+                break;
         }
     }
 
-    public void NeedSatisfied()
+    public virtual void HandleIdle()
     {
-        if(needs1 == false)
+        animator.SetTrigger("Happy");
+    }
+
+    public virtual void HandleSad()
+    {
+        animator.SetTrigger("Sad");
+    }
+    public virtual void HandleOnReward()
+    {
+        animator.SetTrigger("OnReward");
+    }
+
+
+    public virtual void NeedSatisfied()
+    {
+        if(!need1)
         {
-            needs1 = true;
+            need1 = true;
         }
 
-        if (hasSecondNeed == true && needs2 == false)
+        if (!need2)
         {
-            needs2 = true;
+            need2 = true;
         }
     }
 
-    public void QuestCompleted()
+    public virtual void QuestCompleted()
     {
-        if(needs1 && needs2)
+        if(need1 && need2)
         {
             OnReward();
+            currentState = NPCState.OnReward;
         }
+    }
+
+    public void TriggerIdle()
+    {
+        currentState = NPCState.Happy;
     }
 
     public abstract void OnReward();
