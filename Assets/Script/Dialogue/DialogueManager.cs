@@ -16,9 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<Dialogue> dialoguesQueue;
     private Queue<string> sentencesQueue;
-    private Dictionary<Characters, string> characterNamesDictionary;
-    [SerializeField] private Sprite[] characterSprites;
-    private Dictionary<Characters, Sprite> characterSpritesDictionary;
+    [SerializeField] private CharactersData[] characters;
     private Image dialogueBoxImage;
     private Coroutine sentenceCoroutine;
     private string lastSentence;
@@ -41,15 +39,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguesQueue = new Queue<Dialogue>();
         sentencesQueue = new Queue<string>();
-        characterNamesDictionary = new Dictionary<Characters, string>()
-        {
-            { Characters.Gaia, "Gaia"},
-        };
-
-        characterSpritesDictionary = new Dictionary<Characters, Sprite>()
-        {
-            { Characters.Gaia, characterSprites[0]},
-        };
 
     }
 
@@ -172,9 +161,4 @@ public class DialogueManager : MonoBehaviour
         dialogueBoxAnimator.SetBool("IsOpen", false);
         inDialog = false;
     }
-}
-
-public enum Characters
-{
-    Gaia
 }

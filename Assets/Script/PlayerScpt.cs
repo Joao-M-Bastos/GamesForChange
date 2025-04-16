@@ -49,9 +49,15 @@ public class PlayerScpt : MonoBehaviour
         float currentAceleration = _aceleration;
 
         if (moveDirection == Vector2.zero)
+        {
+            //Jogador não está se movendo
             currentAceleration *= 4;
+        }
         else
+        {
+            //Jogador está se movendo
             lastMoveDirection = moveDirection;
+        }
 
         currentVelocity.x = Mathf.Lerp(currentVelocity.x, desiredVelocity.x, _aceleration * Time.deltaTime);
         currentVelocity.z = Mathf.Lerp(currentVelocity.z, desiredVelocity.y, _aceleration * Time.deltaTime);
@@ -79,7 +85,12 @@ public class PlayerScpt : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, Vector3.down, 1.1f, _groundLayerMask))
         {
+            //Jogador no chão
             _coyoteTime = _baseCoyoteTime;
+        }
+        else
+        {
+            //Jogador no ar
         }
     }
 
@@ -87,6 +98,8 @@ public class PlayerScpt : MonoBehaviour
     {
         if (_coyoteTime <= 0 || _jumpBuffer <= 0)
             return;
+
+        //Jogador conseguiu pular
 
         _coyoteTime = 0;
         _jumpBuffer = 0;
@@ -119,6 +132,9 @@ public class PlayerScpt : MonoBehaviour
     {
         if (!Input.GetMouseButtonDown(0))
             return;
+
+        //Jogador atacou
+
         Vector3 lastDirection = new Vector3(lastMoveDirection.x,0, lastMoveDirection.y);
 
         RaycastHit[] hits = Physics.BoxCastAll(transform.position + lastDirection, Vector3.one, Vector3.up, Quaternion.identity);
