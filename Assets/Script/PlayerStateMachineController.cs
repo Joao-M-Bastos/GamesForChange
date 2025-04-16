@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateMachine : MonoBehaviour
+public class PlayerStateMachineController : MonoBehaviour
 {
     PlayerState currentState;
 
@@ -17,7 +17,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void Start()
     {
-        
+        ChangeState(freeState);
     }
 
     public void ChangeState(PlayerState newState)

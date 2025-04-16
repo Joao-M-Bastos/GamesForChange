@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class PlayerFreeMoveState : PlayerState
 {
-    public void EnterState(PlayerStateMachine stateMachine, PlayerScpt player)
+    public void EnterState(PlayerStateMachineController stateMachine, PlayerScpt player)
     {
-        throw new System.NotImplementedException();
+
     }
 
-    public void ExitState(PlayerStateMachine stateMachine, PlayerScpt player)
+    public void ExitState(PlayerStateMachineController stateMachine, PlayerScpt player)
     {
-        throw new System.NotImplementedException();
+
     }
 
-    public void FixedState(PlayerStateMachine stateMachine, PlayerScpt player)
+    public void FixedState(PlayerStateMachineController stateMachine, PlayerScpt player)
     {
-        throw new System.NotImplementedException();
+        player.Walk();
+        player.Jump();
+        player.HandleGravity();
     }
 
-    public void UpdateState(PlayerStateMachine stateMachine, PlayerScpt player)
+    public void UpdateState(PlayerStateMachineController stateMachine, PlayerScpt player)
     {
-        throw new System.NotImplementedException();
+
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface PlayerState
 {
-    public void EnterState(PlayerStateMachine stateMachine, PlayerScpt player);
-    public void ExitState(PlayerStateMachine stateMachine, PlayerScpt player);
-    public void UpdateState(PlayerStateMachine stateMachine, PlayerScpt player);
-    public void FixedState(PlayerStateMachine stateMachine, PlayerScpt player);
+    public void EnterState(PlayerStateMachineController stateMachine, PlayerScpt player);
+    public void ExitState(PlayerStateMachineController stateMachine, PlayerScpt player);
+    public void UpdateState(PlayerStateMachineController stateMachine, PlayerScpt player);
+    public void FixedState(PlayerStateMachineController stateMachine, PlayerScpt player);
 
 }
