@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class SnakeScript : NPCClass
 {
-    // Start is called before the first frame update
-    public new void Start()
+    
+    public override void Start()
     {
-        
+        base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public override void Update()
     {
-        
+        base.Update();
+    }
+
+    public override void HandleIdle()
+    {
+        base.HandleIdle();
+    }
+
+    public override void HandleSad()
+    {
+        base.HandleSad();
+    }
+
+    public new void HandleOnReward()
+    {
+        base.HandleOnReward();
     }
 
     public override void OnReward()

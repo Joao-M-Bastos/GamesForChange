@@ -418,19 +418,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1974208796}
+    m_TransformParent: {fileID: 1083140282}
     m_Modifications:
     - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
       propertyPath: m_LocalRotation.w
@@ -442,11 +442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -632,6 +632,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1083140281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083140282}
+  - component: {fileID: 1083140283}
+  - component: {fileID: 1083140284}
+  m_Layer: 0
+  m_Name: Dr. Snake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1083140282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083140281}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.75, y: 2.42, z: 0.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 196281956}
+  m_Father: {fileID: 1974208796}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083140283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083140281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb933dbf99a65c41a1b5f385d5a8ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  need1: 0
+  hasSecondNeed: 1
+  need2: 0
+  needOne: Medicine Ingredients
+  needTwo: Null
+  reward: Remedy
+  animator: {fileID: 0}
+  currentState: 0
+--- !u!65 &1083140284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083140281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1232298677
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +767,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 196281956}
+  - {fileID: 1083140282}
   - {fileID: 2000731756}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
