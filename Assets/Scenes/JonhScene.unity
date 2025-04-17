@@ -542,6 +542,7 @@ MonoBehaviour:
   _baseJumpBuffer: 0.1
   _aceleration: 5
   _maxSpeed: 5
+  animator: {fileID: 1773848774}
 --- !u!114 &1186248140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,6 +961,11 @@ PrefabInstance:
 --- !u!4 &1773848773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7844045147226251193, guid: b49bb929b229ff74d97b10dca66558c9, type: 3}
+  m_PrefabInstance: {fileID: 1773848772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1773848774 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8479337834659204875, guid: b49bb929b229ff74d97b10dca66558c9, type: 3}
   m_PrefabInstance: {fileID: 1773848772}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1825251644

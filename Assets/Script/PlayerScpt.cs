@@ -22,6 +22,9 @@ public class PlayerScpt : MonoBehaviour
     [SerializeField] float _aceleration;
     [SerializeField] float _maxSpeed;
 
+
+    [SerializeField] private Animator animator;
+
     private void Awake()
     {
         _playerRB = GetComponent<Rigidbody>();
@@ -43,6 +46,9 @@ public class PlayerScpt : MonoBehaviour
 
         RotatePlayer(moveDirection);
 
+        bool isWalking = moveDirection != Vector2.zero;
+        animator.SetBool("IsWalking", isWalking);
+
         Vector2 desiredVelocity = moveDirection.normalized * _maxSpeed;
         Vector3 currentVelocity = _playerRB.velocity;
 
@@ -51,11 +57,13 @@ public class PlayerScpt : MonoBehaviour
         if (moveDirection == Vector2.zero)
         {
             //Jogador não está se movendo
+            
             currentAceleration *= 4;
         }
         else
         {
             //Jogador está se movendo
+           
             lastMoveDirection = moveDirection;
         }
 
@@ -101,6 +109,7 @@ public class PlayerScpt : MonoBehaviour
 
         //Jogador conseguiu pular
 
+        animator.SetTrigger("Jump");
         _coyoteTime = 0;
         _jumpBuffer = 0;
 
@@ -134,6 +143,7 @@ public class PlayerScpt : MonoBehaviour
             return;
 
         //Jogador atacou
+        animator.SetTrigger("Attack");
 
         Vector3 lastDirection = new Vector3(lastMoveDirection.x,0, lastMoveDirection.y);
 
