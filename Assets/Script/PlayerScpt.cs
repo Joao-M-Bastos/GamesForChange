@@ -29,6 +29,7 @@ public class PlayerScpt : MonoBehaviour
     [SerializeField] private Material[] backMaterials;   // Materiais para as costas
 
     public SkinnedMeshRenderer _renderer;
+    private bool _isFacingBack = false;
 
     private void Awake()
     {
@@ -69,11 +70,13 @@ public class PlayerScpt : MonoBehaviour
         {
             // Indo pra cima, então mostrar as costas
             _renderer.materials = backMaterials;
+            _isFacingBack = true;
         }
         else if (vertical < 0)
         {
             // Indo pra baixo, então mostrar a frente
             _renderer.materials = frontMaterials;
+            _isFacingBack = false;
         }
 
         // --------------------------------
@@ -168,7 +171,12 @@ public class PlayerScpt : MonoBehaviour
             return;
 
         //Jogador atacou
-        animator.SetTrigger("Attack");
+        if (_isFacingBack)
+            animator.SetTrigger("AttackBack");
+        else
+            animator.SetTrigger("AttackFront");
+
+        
 
         Vector3 lastDirection = new Vector3(lastMoveDirection.x,0, lastMoveDirection.y);
 
