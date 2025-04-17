@@ -250,6 +250,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!137 &567471020 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1071845144295415793, guid: b49bb929b229ff74d97b10dca66558c9, type: 3}
+  m_PrefabInstance: {fileID: 1773848772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &662429629
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +548,23 @@ MonoBehaviour:
   _aceleration: 5
   _maxSpeed: 5
   animator: {fileID: 1773848774}
+  frontMaterials:
+  - {fileID: 2100000, guid: 35dcddf52c9f9c8458fd6218769f4f17, type: 2}
+  - {fileID: 2100000, guid: 731990318216fc34684d02bbd645c904, type: 2}
+  - {fileID: 2100000, guid: d9ff1885dce3c4d48a0ed04eeecd38be, type: 2}
+  - {fileID: 2100000, guid: 23206efd074f15046a90a7b32ef813e5, type: 2}
+  - {fileID: 2100000, guid: 1dc1bf387549b1641b27214865deeaca, type: 2}
+  - {fileID: 2100000, guid: 377938e44127b244cbec7ba3683d209a, type: 2}
+  - {fileID: 2100000, guid: 3a69c09bd35d9e449ace3bc218b7359a, type: 2}
+  backMaterials:
+  - {fileID: 2100000, guid: ac708b24f89064141a7d8c519d010156, type: 2}
+  - {fileID: 2100000, guid: 9245452c05555734bb29ebc0856f749d, type: 2}
+  - {fileID: 2100000, guid: d9ff1885dce3c4d48a0ed04eeecd38be, type: 2}
+  - {fileID: 2100000, guid: 23206efd074f15046a90a7b32ef813e5, type: 2}
+  - {fileID: 2100000, guid: 4bd1a1b705fe84d47ad602dfe93b378b, type: 2}
+  - {fileID: 2100000, guid: 3c2a3f105fb49514db5056307005becb, type: 2}
+  - {fileID: 2100000, guid: aa8c68d6b1bbe3444b84af5291ede43c, type: 2}
+  _renderer: {fileID: 567471020}
 --- !u!114 &1186248140
 MonoBehaviour:
   m_ObjectHideFlags: 0

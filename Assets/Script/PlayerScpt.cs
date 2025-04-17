@@ -25,8 +25,14 @@ public class PlayerScpt : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    [SerializeField] private Material[] frontMaterials;  // Materiais padrão (de frente)
+    [SerializeField] private Material[] backMaterials;   // Materiais para as costas
+
+    public SkinnedMeshRenderer _renderer;
+
     private void Awake()
     {
+
         _playerRB = GetComponent<Rigidbody>();
     }
 
@@ -42,6 +48,7 @@ public class PlayerScpt : MonoBehaviour
 
     public void Walk()
     {
+
         Vector2 moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         RotatePlayer(moveDirection);
@@ -53,6 +60,24 @@ public class PlayerScpt : MonoBehaviour
         Vector3 currentVelocity = _playerRB.velocity;
 
         float currentAceleration = _aceleration;
+
+        // ------------------- checar a direção
+
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        if (vertical > 0)
+        {
+            // Indo pra cima, então mostrar as costas
+            _renderer.materials = backMaterials;
+        }
+        else if (vertical < 0)
+        {
+            // Indo pra baixo, então mostrar a frente
+            _renderer.materials = frontMaterials;
+        }
+
+        // --------------------------------
+
 
         if (moveDirection == Vector2.zero)
         {
