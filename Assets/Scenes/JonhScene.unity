@@ -1105,8 +1105,15 @@ MonoBehaviour:
   characterSpriteRenderer: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogueBoxAnimator: {fileID: 0}
-  <DialogueEvents>k__BackingField: []
-  characterSprites: []
+  <DialogueEvents>k__BackingField:
+  - <Dialogues>k__BackingField:
+    - <CharacterData>k__BackingField: {fileID: 0}
+      <BackgroundImage>k__BackingField: {fileID: 0}
+      <Font>k__BackingField: {fileID: 0}
+      <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+      <FontStyle>k__BackingField: 0
+      <Sentences>k__BackingField: []
+  characters: []
 --- !u!1 &1979340170
 GameObject:
   m_ObjectHideFlags: 0

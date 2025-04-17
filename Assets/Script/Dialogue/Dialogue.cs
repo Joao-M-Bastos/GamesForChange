@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [Serializable]
 public class Dialogue 
 {
-    [field:SerializeField] public Characters CharacterType { get; private set; }
+    [field:SerializeField] public CharactersData CharacterData { get; private set; }
 
     [field: Range(-3f, 3f)]
     [field:SerializeField] public Sprite BackgroundImage { get; private set; }

@@ -85,8 +85,8 @@ public class DialogueManager : MonoBehaviour
 
         SetDialogueConfig(nextDialogue);
 
-        characterNameText.text = characterNamesDictionary[nextDialogue.CharacterType];
-        characterSpriteRenderer.sprite = characterSpritesDictionary[nextDialogue.CharacterType];
+        characterNameText.text = nextDialogue.CharacterData.Name;
+        characterSpriteRenderer.sprite = nextDialogue.CharacterData.CharacterSprite;
 
         dialoguesQueue.Dequeue();
         TryDisplayNextSentence();
