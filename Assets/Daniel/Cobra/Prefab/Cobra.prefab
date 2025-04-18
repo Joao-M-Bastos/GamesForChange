@@ -565,6 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2484021078897387284}
   - component: {fileID: 5091546557099215518}
+  - component: {fileID: 3210594921247717708}
   m_Layer: 0
   m_Name: Cobra
   m_TagString: Untagged
@@ -610,6 +611,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3210594921247717708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221114480541920305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd5c5e7979e4cf4ca8b9f64ca261186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SadMaterials:
+  - {fileID: 2100000, guid: 38e2a8befdef486439551970f9075fe4, type: 2}
+  - {fileID: 2100000, guid: f5048ff9f4c781c4fa4e35beba50efaf, type: 2}
+  - {fileID: 2100000, guid: 6ebda9370f8a3d142ada0682f43e501c, type: 2}
+  - {fileID: 2100000, guid: a12b78b49d925174bae55479148f2a63, type: 2}
+  - {fileID: 2100000, guid: 851cf869bec592a43915ccd60bda1b08, type: 2}
+  - {fileID: 2100000, guid: 1347e78270d57cb4e9e9bf56d319e304, type: 2}
+  HappyMaterials:
+  - {fileID: 2100000, guid: 38e2a8befdef486439551970f9075fe4, type: 2}
+  - {fileID: 2100000, guid: f5048ff9f4c781c4fa4e35beba50efaf, type: 2}
+  - {fileID: 2100000, guid: 6ebda9370f8a3d142ada0682f43e501c, type: 2}
+  - {fileID: 2100000, guid: cec7028bc7035d6469504b5a0216b4f7, type: 2}
+  - {fileID: 2100000, guid: 851cf869bec592a43915ccd60bda1b08, type: 2}
+  - {fileID: 2100000, guid: 1347e78270d57cb4e9e9bf56d319e304, type: 2}
+  _renderer: {fileID: 108858228156168352}
 --- !u!1 &5885103964874424108
 GameObject:
   m_ObjectHideFlags: 0
