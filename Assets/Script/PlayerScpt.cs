@@ -87,6 +87,10 @@ public class PlayerScpt : MonoBehaviour
             //Jogador não está se movendo
             
             currentAceleration *= 4;
+
+            // Faz o personagem olhar para frente quando parado
+            _renderer.materials = frontMaterials;
+            _isFacingBack = false;
         }
         else
         {
