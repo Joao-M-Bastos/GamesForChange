@@ -11,7 +11,7 @@ public class Dialogue
     [field:SerializeField] public CharactersData CharacterData { get; private set; }
 
     [field: Range(-3f, 3f)]
-    [field:SerializeField] public Sprite BackgroundImage { get; private set; }
+    //[field:SerializeField] public Sprite BackgroundImage { get; private set; }
     [field:SerializeField] public TMP_FontAsset Font { get; private set; }
     [field:SerializeField] public Color FontColor { get; private set; }
     [field:SerializeField] public FontStyles FontStyle { get; private set; }

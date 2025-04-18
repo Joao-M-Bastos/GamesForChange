@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        dialogueBoxImage = dialogueBoxAnimator.GetComponent<Image>();
+        //dialogueBoxImage = dialogueBoxAnimator.GetComponent<Image>();
     }
     void Start()
     {
@@ -50,12 +50,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(int dialogueID, int cameraWork)
+    public void StartDialogue(int dialogueID)
     {
-        StartDialogue(DialogueEvents[dialogueID].Dialogues, cameraWork);
+        StartDialogue(DialogueEvents[dialogueID].Dialogues);
     }
 
-    public void StartDialogue(List<Dialogue> dialogues, int cameraWork)
+    public void StartDialogue(List<Dialogue> dialogues)
     {
         dialoguesQueue.Clear();
         sentencesQueue.Clear();
@@ -94,11 +94,10 @@ public class DialogueManager : MonoBehaviour
 
     private void SetDialogueConfig(Dialogue dialogue)
     {
-        dialogueBoxImage.sprite = dialogue.BackgroundImage;
         dialogueText.font = dialogue.Font;
         dialogueText.fontStyle = dialogue.FontStyle;
         dialogueText.color = dialogue.FontColor;
-        dialogueBoxImage.sprite = dialogue.BackgroundImage;
+        //dialogueBoxImage.sprite = dialogue.BackgroundImage;
 
         dialogueBoxAnimator.SetBool("IsOpen", true);
     }

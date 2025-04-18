@@ -6,6 +6,6 @@ public class Screamer : MonoBehaviour, IHitable
 {
     public void TakePlayerHit()
     {
-        Debug.Log("OUCH!");
+        gameObject.GetComponent<DialogueTrigger>().TriggerDialogueEvent();
     }
 }

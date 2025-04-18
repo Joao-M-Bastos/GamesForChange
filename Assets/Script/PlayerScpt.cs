@@ -14,6 +14,7 @@ public class PlayerScpt : MonoBehaviour
     [SerializeField] float _gravityModifierValue, _maxGravityValue;
     [SerializeField] float _jumpForce;
     [SerializeField] float _baseCoyoteTime, _baseJumpBuffer;
+    [Range(0.0f, 1.0f)][SerializeField] float _breakAtJump;
     float _coyoteTime, _jumpBuffer;
     #endregion
 
@@ -57,9 +58,10 @@ public class PlayerScpt : MonoBehaviour
         bool isWalking = moveDirection != Vector2.zero;
         animator.SetBool("IsWalking", isWalking);
 
-        Vector2 desiredVelocity = moveDirection.normalized * _maxSpeed;
+        
         Vector3 currentVelocity = _playerRB.velocity;
 
+        float currentMaxSpeed = _maxSpeed;
         float currentAceleration = _aceleration;
 
         // ------------------- checar a direção
@@ -95,8 +97,17 @@ public class PlayerScpt : MonoBehaviour
             lastMoveDirection = moveDirection;
         }
 
-        currentVelocity.x = Mathf.Lerp(currentVelocity.x, desiredVelocity.x, _aceleration * Time.deltaTime);
-        currentVelocity.z = Mathf.Lerp(currentVelocity.z, desiredVelocity.y, _aceleration * Time.deltaTime);
+        if (_coyoteTime <= 0)
+        {
+            currentAceleration *= _breakAtJump;
+            currentMaxSpeed *= _breakAtJump;
+        }
+        
+
+        Vector2 desiredVelocity = moveDirection.normalized * currentMaxSpeed;
+
+        currentVelocity.x = Mathf.Lerp(currentVelocity.x, desiredVelocity.x, currentAceleration * Time.deltaTime);
+        currentVelocity.z = Mathf.Lerp(currentVelocity.z, desiredVelocity.y, currentAceleration * Time.deltaTime);
 
         _playerRB.velocity = currentVelocity;
     }
@@ -119,7 +130,7 @@ public class PlayerScpt : MonoBehaviour
 
     public void IsOnGround()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, 1.1f, _groundLayerMask))
+        if (Physics.Raycast(transform.position, Vector3.down, 1.01f, _groundLayerMask))
         {
             //Jogador no chão
             _coyoteTime = _baseCoyoteTime;
@@ -141,9 +152,9 @@ public class PlayerScpt : MonoBehaviour
         _coyoteTime = 0;
         _jumpBuffer = 0;
 
-        Vector2 velocity = _playerRB.velocity;
+        Vector3 velocity = _playerRB.velocity;
 
-        velocity.y = _jumpForce;
+        velocity = new Vector3(velocity.x * _breakAtJump, _jumpForce, velocity.z * _breakAtJump);
 
         _playerRB.velocity = velocity;
     }
