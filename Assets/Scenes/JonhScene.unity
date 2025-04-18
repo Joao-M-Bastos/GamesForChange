@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 662429633}
   - component: {fileID: 662429632}
   - component: {fileID: 662429631}
+  - component: {fileID: 662429634}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -361,6 +362,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662429629}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &662429634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662429629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9017f14ea4733a54b88552f4aedfebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &692789217
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +559,7 @@ MonoBehaviour:
   _jumpForce: 5
   _baseCoyoteTime: 0.2
   _baseJumpBuffer: 0.1
-  _breakAtJump: 0
+  _breakAtJump: 1
   _aceleration: 5
   _maxSpeed: 5
   animator: {fileID: 1773848774}
@@ -850,13 +863,20 @@ MonoBehaviour:
       <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
       <FontStyle>k__BackingField: 0
       <Sentences>k__BackingField:
-      - OUCH!
+      - OUCH!!
     - <CharacterData>k__BackingField: {fileID: 11400000, guid: b9624ea3503df8641bdb80214e744d72, type: 2}
       <Font>k__BackingField: {fileID: 0}
       <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
       <FontStyle>k__BackingField: 0
       <Sentences>k__BackingField:
-      - PARA DE SER FROUXO!
+      - PARA DE SER FrOUXO
+      - '!!!!!!!!!'
+    - <CharacterData>k__BackingField: {fileID: 11400000, guid: 83ce2ce985ab2794193e018a5f8bf277, type: 2}
+      <Font>k__BackingField: {fileID: 0}
+      <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
+      <FontStyle>k__BackingField: 0
+      <Sentences>k__BackingField:
+      - :(
   DialogueManagerToTrigger: {fileID: 1857307152}
 --- !u!1 &1647198502
 GameObject:

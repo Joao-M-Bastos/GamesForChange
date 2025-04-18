@@ -19,4 +19,9 @@ public class DialogueTrigger : MonoBehaviour
                 currentDialogue = 0;
         
     }
+
+    public void TriggerDialogueEvent(int dialogueID)
+    {
+        DialogueManagerToTrigger.StartDialogue(DialogueEvents[dialogueID].Dialogues);
+    }
 }
