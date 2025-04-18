@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeScript : NPCClass
+public class BakerCat : NPCClass
 {
 
 
@@ -11,7 +11,7 @@ public class SnakeScript : NPCClass
         base.Start();
     }
 
-    
+
     public override void Update()
     {
         base.Update();

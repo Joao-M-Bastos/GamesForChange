@@ -5,6 +5,9 @@ using UnityEngine;
 
 public abstract class NPCClass : MonoBehaviour
 {
+    public int questIndex;
+
+    [Header("Quest Requirements")]
     public bool need1;
     public bool hasSecondNeed;
     public bool need2;

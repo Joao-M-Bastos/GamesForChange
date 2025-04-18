@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CowScript : NPCClass
 {
+
+
     public override void Start()
     {
         base.Start();
