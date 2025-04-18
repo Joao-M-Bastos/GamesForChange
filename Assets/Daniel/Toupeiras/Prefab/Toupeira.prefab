@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4831999888817290927}
   - component: {fileID: 6214522801610870615}
+  - component: {fileID: 7124361991080851855}
   m_Layer: 0
   m_Name: Toupeira
   m_TagString: Untagged
@@ -86,6 +87,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7124361991080851855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5594767881464970299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd5c5e7979e4cf4ca8b9f64ca261186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SadMaterials:
+  - {fileID: 2100000, guid: 63f92fa6840bbee4cb186b989d379b17, type: 2}
+  HappyMaterials:
+  - {fileID: 2100000, guid: d3c6ba159ed44c44586a2fea76faab3f, type: 2}
+  _renderer: {fileID: 2606550543194562541}
 --- !u!1 &5773255317748580021
 GameObject:
   m_ObjectHideFlags: 0
