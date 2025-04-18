@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoleScript : NPCClass
 {
+    
+
     public override void Start()
     {
         base.Start();

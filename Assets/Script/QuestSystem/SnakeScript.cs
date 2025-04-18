@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SnakeScript : NPCClass
 {
-    
+
+
     public override void Start()
     {
         base.Start();

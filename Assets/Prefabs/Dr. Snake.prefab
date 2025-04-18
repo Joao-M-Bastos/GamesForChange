@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &434646331915165602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4302886324084305273}
+  - component: {fileID: 2361409482781418780}
+  - component: {fileID: 4770513691443817591}
+  - component: {fileID: 6710585460043645782}
+  - component: {fileID: 1458781512098230826}
+  m_Layer: 0
+  m_Name: Dr. Snake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4302886324084305273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434646331915165602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.94, y: 2.13, z: 4.69}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5273989701271783975}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2361409482781418780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434646331915165602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb933dbf99a65c41a1b5f385d5a8ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questIndex: 0
+  need1: 0
+  hasSecondNeed: 0
+  need2: 0
+  needOne: Medicine Ingredients
+  needTwo: Null
+  reward: Remedy
+  animator: {fileID: 0}
+  currentState: 0
+--- !u!114 &4770513691443817591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434646331915165602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba24aa1cd54565740bcaad2252b2b8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6710585460043645782
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434646331915165602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.355402, y: 4.3078976, z: 3.3006089}
+  m_Center: {x: -1.1102791, y: 1.2156782, z: 0}
+--- !u!65 &1458781512098230826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434646331915165602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8147411, y: 4.2037516, z: 0.21708155}
+  m_Center: {x: -1.3657417, y: 1.2049508, z: -0.30451083}
+--- !u!1001 &7730989177967045939
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4302886324084305273}
+    m_Modifications:
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97629607
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.2164396
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221114480541920305, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+      propertyPath: m_Name
+      value: Cobra
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+--- !u!4 &5273989701271783975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2484021078897387284, guid: fd5ada7e771c3a3419dc787d45c33b66, type: 3}
+  m_PrefabInstance: {fileID: 7730989177967045939}
+  m_PrefabAsset: {fileID: 0}
