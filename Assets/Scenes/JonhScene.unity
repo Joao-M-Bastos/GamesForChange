@@ -726,7 +726,6 @@ GameObject:
   - component: {fileID: 1434644961}
   - component: {fileID: 1434644964}
   - component: {fileID: 1434644966}
-  - component: {fileID: 1434644965}
   m_Layer: 0
   m_Name: Screamer
   m_TagString: Untagged
@@ -832,40 +831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba24aa1cd54565740bcaad2252b2b8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1434644965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434644959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5b078d8f2806f4b90fbb9cab30a355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textSpeed: 0.05
-  characterNameText: {fileID: 1817294461}
-  characterSpriteRenderer: {fileID: 1817294460}
-  dialogueText: {fileID: 1817294459}
-  dialogueBoxAnimator: {fileID: 1817294458}
-  <DialogueEvents>k__BackingField:
-  - <Dialogues>k__BackingField:
-    - <CharacterData>k__BackingField: {fileID: 11400000, guid: 83ce2ce985ab2794193e018a5f8bf277, type: 2}
-      <Font>k__BackingField: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-      <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
-      <FontStyle>k__BackingField: 0
-      <Sentences>k__BackingField:
-      - OUCH
-    - <CharacterData>k__BackingField: {fileID: 11400000, guid: b9624ea3503df8641bdb80214e744d72, type: 2}
-      <Font>k__BackingField: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-      <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
-      <FontStyle>k__BackingField: 0
-      <Sentences>k__BackingField:
-      - PARA DE SER FROUXO
-  characters:
-  - {fileID: 11400000, guid: 83ce2ce985ab2794193e018a5f8bf277, type: 2}
-  - {fileID: 11400000, guid: b9624ea3503df8641bdb80214e744d72, type: 2}
 --- !u!114 &1434644966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,8 +843,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6905f668bb724f44196596c4804e0f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEventIndex: 0
-  DialogueManagerToTrigger: {fileID: 1434644965}
+  <DialogueEvents>k__BackingField:
+  - <Dialogues>k__BackingField:
+    - <CharacterData>k__BackingField: {fileID: 11400000, guid: 83ce2ce985ab2794193e018a5f8bf277, type: 2}
+      <Font>k__BackingField: {fileID: 0}
+      <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
+      <FontStyle>k__BackingField: 0
+      <Sentences>k__BackingField:
+      - OUCH!
+    - <CharacterData>k__BackingField: {fileID: 11400000, guid: b9624ea3503df8641bdb80214e744d72, type: 2}
+      <Font>k__BackingField: {fileID: 0}
+      <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
+      <FontStyle>k__BackingField: 0
+      <Sentences>k__BackingField:
+      - PARA DE SER FROUXO!
+  DialogueManagerToTrigger: {fileID: 1857307152}
 --- !u!1 &1647198502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,19 +1478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5b078d8f2806f4b90fbb9cab30a355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 0
-  characterNameText: {fileID: 0}
-  characterSpriteRenderer: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogueBoxAnimator: {fileID: 0}
-  <DialogueEvents>k__BackingField:
-  - <Dialogues>k__BackingField:
-    - <CharacterData>k__BackingField: {fileID: 0}
-      <Font>k__BackingField: {fileID: 0}
-      <FontColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
-      <FontStyle>k__BackingField: 0
-      <Sentences>k__BackingField: []
-  characters: []
+  textSpeed: 0.05
+  characterNameText: {fileID: 1817294461}
+  characterSpriteRenderer: {fileID: 1817294460}
+  dialogueText: {fileID: 1817294459}
+  dialogueBoxAnimator: {fileID: 1817294458}
 --- !u!1 &1979340170
 GameObject:
   m_ObjectHideFlags: 0

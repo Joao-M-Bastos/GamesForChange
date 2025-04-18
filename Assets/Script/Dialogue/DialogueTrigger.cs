@@ -4,13 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] private int dialogueEventIndex;
+    //[SerializeField] private int dialogueEventIndex;
+    [field: SerializeField] public List<DialogueEvent> DialogueEvents { get; private set; }
+    int currentDialogue;
 
     public DialogueManager DialogueManagerToTrigger;
 
     public void TriggerDialogueEvent()
     {
-        if (dialogueEventIndex >= 0)
-            DialogueManagerToTrigger.StartDialogue(dialogueEventIndex);
+            DialogueManagerToTrigger.StartDialogue(DialogueEvents[currentDialogue].Dialogues);
+            currentDialogue++;
+
+            if(currentDialogue == DialogueEvents.Count)
+                currentDialogue = 0;
+        
     }
 }

@@ -12,11 +12,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private SpriteRenderer characterSpriteRenderer;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private Animator dialogueBoxAnimator;
-    [field: SerializeField] public List<DialogueEvent> DialogueEvents { get; private set; }
+    //[field: SerializeField] public List<DialogueEvent> DialogueEvents { get; private set; }
 
     private Queue<Dialogue> dialoguesQueue;
     private Queue<string> sentencesQueue;
-    [SerializeField] private CharactersData[] characters;
+    //[SerializeField] private CharactersData[] characters;
     private Image dialogueBoxImage;
     private Coroutine sentenceCoroutine;
     private string lastSentence;
@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(int dialogueID)
     {
-        StartDialogue(DialogueEvents[dialogueID].Dialogues);
+        //StartDialogue(DialogueEvents[dialogueID].Dialogues);
     }
 
     public void StartDialogue(List<Dialogue> dialogues)
