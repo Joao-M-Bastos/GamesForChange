@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class NPCClass : MonoBehaviour
+public abstract class NPCClass : MonoBehaviour, IHitable
 {
     public int questIndex;
 
@@ -98,4 +98,38 @@ public abstract class NPCClass : MonoBehaviour
     }
 
     public abstract void OnReward();
+
+
+    // DIALOGUE STUFF
+    public virtual void TakePlayerHit()
+    {
+        //Esse ponto é importante para não acumular varios QuandoDialogoComecar
+        DialogueManager.dialogueStart -= QuandoDialogoComecar;
+
+
+        //Chama a função QuandoDialogoComecar quando dialogo comecar
+        DialogueManager.dialogueStart += QuandoDialogoComecar;
+        Debug.Log("Estou esperando Dialogo");
+    }
+
+    public virtual void QuandoDialogoComecar()
+    {
+        //Esse ponto é importante para não acumular varios QuandoDialogoTerminar
+        DialogueManager.dialogueEnd -= QuandoDialogoTerminar;
+
+        //Chama a função QuandoDialogoTerminar quando dialogo terminar
+        DialogueManager.dialogueEnd += QuandoDialogoTerminar;
+        //Debug.Log("Dialogo Começou, eagora esperarei ele terminar");
+
+        //OBRIGATORIO!!!! sempre retirar o QuandoDialogoComecar do "dialogueStart" desse jeito, apos usar
+        DialogueManager.dialogueStart -= QuandoDialogoComecar;
+    }
+
+    public virtual void QuandoDialogoTerminar()
+    {
+        //Debug.Log("Dialogo Terminou");
+
+        //OBRIGATORIO!!!! sempre retirar o QuandoDialogoTerminar do "dialogueEnd" desse jeito, apos usar
+        DialogueManager.dialogueEnd -= QuandoDialogoTerminar;
+    }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueSeer : MonoBehaviour, IHitable
+public abstract class DialogueSeer : MonoBehaviour, IHitable
 {
     public void TakePlayerHit()
     {
@@ -22,15 +22,20 @@ public class DialogueSeer : MonoBehaviour, IHitable
 
         //Chama a função QuandoDialogoTerminar quando dialogo terminar
         DialogueManager.dialogueEnd += QuandoDialogoTerminar;
-        Debug.Log("Dialogo Começou, eagora esperarei ele terminar");
+        RealizarAcaoComeco();
+        //Debug.Log("Dialogo Começou, eagora esperarei ele terminar");
 
         //OBRIGATORIO!!!! sempre retirar o QuandoDialogoComecar do "dialogueStart" desse jeito, apos usar
         DialogueManager.dialogueStart -= QuandoDialogoComecar;
     }
 
+    public abstract void RealizarAcaoComeco();
+    public abstract void RealizarAcaoFim();
+
     private void QuandoDialogoTerminar()
     {
-        Debug.Log("Dialogo Terminou");
+        RealizarAcaoFim();
+        //Debug.Log("Dialogo Terminou");
 
         //OBRIGATORIO!!!! sempre retirar o QuandoDialogoTerminar do "dialogueEnd" desse jeito, apos usar
         DialogueManager.dialogueEnd -= QuandoDialogoTerminar;

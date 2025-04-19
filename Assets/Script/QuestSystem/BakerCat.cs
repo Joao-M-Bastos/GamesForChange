@@ -5,7 +5,6 @@ using UnityEngine;
 public class BakerCat : NPCClass
 {
 
-
     public override void Start()
     {
         base.Start();

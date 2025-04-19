@@ -74,7 +74,7 @@ public class PlayerScpt : MonoBehaviour
             _renderer.materials = backMaterials;
             _isFacingBack = true;
         }
-        else if (vertical < 0)
+        else if (vertical < 0 || vertical == 0)
         {
             // Indo pra baixo, então mostrar a frente
             _renderer.materials = frontMaterials;
