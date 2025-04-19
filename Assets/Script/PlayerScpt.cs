@@ -119,7 +119,7 @@ public class PlayerScpt : MonoBehaviour
     private void RotatePlayer(Vector2 moveDirection)
     {
         if (moveDirection.x != 0)
-            transform.localScale = new Vector3(moveDirection.x, 1, 1);
+            spriteRenderer.transform.localScale = new Vector3(moveDirection.x, 1, 1);
 
         spriteRenderer.transform.rotation = Quaternion.Euler(25, moveDirection.x * -20, 0);
     }

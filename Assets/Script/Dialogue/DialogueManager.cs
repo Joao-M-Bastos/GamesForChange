@@ -8,16 +8,12 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private float textSpeed;
-    [SerializeField] private Text characterNameText;
-    [SerializeField] private SpriteRenderer characterSpriteRenderer;
-    [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private Animator dialogueBoxAnimator;
+    private DialogueBox _dialogueBox;
     //[field: SerializeField] public List<DialogueEvent> DialogueEvents { get; private set; }
 
     private Queue<Dialogue> dialoguesQueue;
     private Queue<string> sentencesQueue;
     //[SerializeField] private CharactersData[] characters;
-    private Image dialogueBoxImage;
     private Coroutine sentenceCoroutine;
     private string lastSentence;
 
@@ -31,15 +27,17 @@ public class DialogueManager : MonoBehaviour
     public delegate void DialogueStart();
     public static DialogueStart dialogueStart;
 
+    public static DialogueManager instance;
+
     private void Awake()
     {
+        instance = this;
         //dialogueBoxImage = dialogueBoxAnimator.GetComponent<Image>();
     }
     void Start()
     {
         dialoguesQueue = new Queue<Dialogue>();
         sentencesQueue = new Queue<string>();
-
     }
 
     public void Update()
@@ -85,8 +83,7 @@ public class DialogueManager : MonoBehaviour
 
         SetDialogueConfig(nextDialogue);
 
-        characterNameText.text = nextDialogue.CharacterData.Name;
-        characterSpriteRenderer.sprite = nextDialogue.CharacterData.CharacterSprite;
+        _dialogueBox.CharacterNameText.text = nextDialogue.CharacterData.Name;
 
         dialoguesQueue.Dequeue();
         TryDisplayNextSentence();
@@ -94,12 +91,17 @@ public class DialogueManager : MonoBehaviour
 
     private void SetDialogueConfig(Dialogue dialogue)
     {
-        dialogueText.font = dialogue.Font;
-        dialogueText.fontStyle = dialogue.FontStyle;
-        dialogueText.color = dialogue.FontColor;
+        if(_dialogueBox != null)
+            _dialogueBox.DialogueText.text = "";
+        
+        _dialogueBox = dialogue.DialogueBox;
+
+        _dialogueBox.DialogueText.font = dialogue.Font;
+        _dialogueBox.DialogueText.fontStyle = dialogue.FontStyle;
+        _dialogueBox.DialogueText.color = dialogue.FontColor;
         //dialogueBoxImage.sprite = dialogue.BackgroundImage;
 
-        dialogueBoxAnimator.SetBool("IsOpen", true);
+        _dialogueBox.DialogueBoxAnimator.SetBool("IsOpen", true);
     }
 
     public void TryDisplayNextSentence()
@@ -116,7 +118,7 @@ public class DialogueManager : MonoBehaviour
         if (sentenceCoroutine != null)
         {
             StopAllCoroutines();
-            dialogueText.text = lastSentence;
+            _dialogueBox.DialogueText.text = lastSentence;
             sentenceCoroutine = null;
             return;
         }
@@ -143,11 +145,11 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypeSentence(string sentence)
     {
-        dialogueText.text = "";
+        _dialogueBox.DialogueText.text = "";
 
         foreach (char letter in  sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            _dialogueBox.DialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
         }
 
@@ -157,7 +159,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         dialogueEnd?.Invoke();
-        dialogueBoxAnimator.SetBool("IsOpen", false);
+        _dialogueBox.DialogueBoxAnimator.SetBool("IsOpen", false);
         inDialog = false;
     }
 }

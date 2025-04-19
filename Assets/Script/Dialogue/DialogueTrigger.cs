@@ -8,11 +8,9 @@ public class DialogueTrigger : MonoBehaviour
     [field: SerializeField] public List<DialogueEvent> DialogueEvents { get; private set; }
     int currentDialogue;
 
-    public DialogueManager DialogueManagerToTrigger;
-
     public void TriggerDialogueEvent()
     {
-            DialogueManagerToTrigger.StartDialogue(DialogueEvents[currentDialogue].Dialogues);
+            DialogueManager.instance.StartDialogue(DialogueEvents[currentDialogue].Dialogues);
             currentDialogue++;
 
             if(currentDialogue == DialogueEvents.Count)
@@ -22,6 +20,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogueEvent(int dialogueID)
     {
-        DialogueManagerToTrigger.StartDialogue(DialogueEvents[dialogueID].Dialogues);
+        DialogueManager.instance.StartDialogue(DialogueEvents[dialogueID].Dialogues);
     }
 }
