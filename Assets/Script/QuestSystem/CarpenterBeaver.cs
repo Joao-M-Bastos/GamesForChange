@@ -36,4 +36,9 @@ public class CarpenterBeaver : NPCClass
     {
         throw new System.NotImplementedException();
     }
+
+    public override void TakePlayerHit()
+    {
+        base.TakePlayerHit();
+    }
 }

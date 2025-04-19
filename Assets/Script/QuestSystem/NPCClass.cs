@@ -57,16 +57,16 @@ public abstract class NPCClass : MonoBehaviour, IHitable
 
     public virtual void HandleIdle()
     {
-        animator.SetTrigger("Happy");
+        // animator.SetTrigger("Happy");
     }
 
     public virtual void HandleSad()
     {
-        animator.SetTrigger("Sad");
+        // animator.SetTrigger("Sad");
     }
     public virtual void HandleOnReward()
     {
-        animator.SetTrigger("OnReward");
+        // animator.SetTrigger("OnReward");
     }
 
 
@@ -103,6 +103,7 @@ public abstract class NPCClass : MonoBehaviour, IHitable
     // DIALOGUE STUFF
     public virtual void TakePlayerHit()
     {
+        Debug.Log("ACERTOU");
         //Esse ponto é importante para não acumular varios QuandoDialogoComecar
         DialogueManager.dialogueStart -= QuandoDialogoComecar;
 

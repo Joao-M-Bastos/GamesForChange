@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4563dc45b1d6d9448091be4e4117be4, type: 3}
-  m_Name: Screamer
+  m_Name: Castor
   m_EditorClassIdentifier: 
-  Name: Screamer
-  CharacterSprite: {fileID: 21300000, guid: e2c6e715becf8694a98d32c7389e202a, type: 3}
+  Name: Carpenter Beaver
+  CharacterSprite: {fileID: 21300000, guid: 1adad718158032a43857f4a5b08e1b91, type: 3}
